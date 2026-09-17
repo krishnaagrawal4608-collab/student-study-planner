@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<button id="themeButton" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+
+    <div class="container">
+        <h1>Student Study Planner</h1>
+
+        <div class="form">
+            <input type="text" id="subject" placeholder="Enter subject">
+
+            <input type="text" id="task" placeholder="Enter task">
+
+            <input type="date" id="date">
+
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        
+<div class="dashboard">
+    <div class="stat">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+    </div>
+
+    <div class="stat">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+    </div>
+
+    <div class="stat">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+    </div>
+</div>
+
+
+
+        <h2>My Tasks</h2>
+        
+<div class="filters">
+    <input type="text" id="search" placeholder="Search task..." onkeyup="filterTasks()">
+
+    <select id="filter" onchange="filterTasks()">
+        <option value="all">All Tasks</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+    </select>
+</div>
+
+
+
+        <div id="taskList"></div>
+
+        
+<div class="progress">
+    <h2>Progress</h2>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <p id="progressText">0% Completed</p>
+</div>
+ 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

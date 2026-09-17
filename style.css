@@ -1,0 +1,330 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+#taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.task-info h3 {
+    margin-bottom: 5px;
+}
+
+.task-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.progress {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f4f6f8;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    input,
+    button {
+        width: 100%;
+    }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: #222;
+    transition: 0.3s;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters input {
+    flex: 1;
+}
+
+.filters select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters input,
+    .filters select {
+        width: 100%;
+    }
+}
+.dashboard {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.stat h3 {
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}
+
+body {
+    animation: pageLoad 0.8s ease;
+}
+
+.container {
+    animation: containerLoad 0.8s ease;
+}
+
+.stat {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.task {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: taskLoad 0.4s ease;
+}
+
+.task:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+button {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input,
+select {
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #222;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.progress-bar {
+    animation: progressLoad 1s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes containerLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes taskLoad {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressLoad {
+    from {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+#themeButton {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+}
+
+body.dark .stat,
+body.dark .task {
+    border-color: #444;
+}
+
+body.dark .task-info p {
+    color: #aaa;
+}
+
+body.dark .progress {
+    background: #2a2a2a;
+}
+
+body.dark input,
+body.dark select {
+    background: #2a2a2a;
+    color: white;
+    border-color: #555;
+}
+
+body.dark input::placeholder {
+    color: #aaa;
+}
+
+
+
+
+
+
+
+
